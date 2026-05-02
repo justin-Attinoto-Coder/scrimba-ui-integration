@@ -1,37 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scrimba UI Integration</title>
-    <link rel="stylesheet" href="/index.css" />
-  </head>
-  <body class="min-h-screen bg-gray-50 text-gray-900">
-    <header class="bg-white shadow-sm">
-      <div class="max-w-5xl mx-auto px-4 py-6">
-        <h1 class="text-3xl font-bold tracking-tight text-indigo-600">
-          Scrimba UI Integration
-        </h1>
-        <p class="mt-1 text-sm text-gray-500">
-          Responsive &amp; modernized UI challenge
-        </p>
-      </div>
-    </header>
-
-    <main class="max-w-5xl mx-auto px-4 py-10">
-      <!-- Challenge content goes here -->
-      <section class="bg-white rounded-2xl shadow p-8">
-        <h2 class="text-xl font-semibold mb-4 text-gray-800">
-          Welcome to the Challenge
-        </h2>
-        <p class="text-gray-600 leading-relaxed">
-          Add your UI challenge content here. This project is powered by
-          <span class="font-medium text-indigo-500">Vite</span> and styled with
-          <span class="font-medium text-sky-500">Tailwind CSS v4</span>.
-        </p>
-      </section>
-    </main>
-
-    <script type="module" src="/index.js"></script>
-  </body>
-</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Cabins - Scenic Forests</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="bg-white text-gray-900" style="font-family: 'Montserrat', sans-serif;">
+    <!-- Hero Section with Gradient Overlay -->
+    <div class="relative min-h-screen bg-cover bg-center" style="background-image: url('images/forest-bg-2.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-br from-green-800/80 via-green-600/70 to-blue-500/60"></div>
+        
+        <div class="relative z-10">
+            <!-- Header -->
+            <header class="px-4 py-6 md:px-8">
+                <div class="max-w-7xl mx-auto flex justify-between items-center">
+                    <a href="home.html" class="text-2xl font-bold text-white hover:text-green-200 transition-colors">scenic.forests</a>
+                    
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="index.html" class="text-white hover:text-green-200 transition-colors font-medium">Home</a>
+                        <a href="cabins.html" class="text-green-200 border-b-2 border-green-200 font-medium">Cabins</a>
+                        <a href="#" class="text-white hover:text-green-200 transition-colors font-medium">FAQ</a>
+                        <a href="#" class="text-white hover:text-green-200 transition-colors font-medium">Reservations</a>
+                    </nav>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="menu-btn" class="md:hidden text-white hover:text-green-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-green-800/95 backdrop-blur-sm">
+                    <nav class="px-4 py-6 space-y-4">
+                        <a href="home.html" class="block text-white hover:text-green-200 transition-colors">Home</a>
+                        <a href="cabins.html" class="block text-green-200 font-medium">Cabins</a>
+                        <a href="#" class="block text-white hover:text-green-200 transition-colors">FAQ</a>
+                        <a href="#" class="block text-white hover:text-green-200 transition-colors">Reservations</a>
+                    </nav>
+                </div>
+            </header>
+            
+            <!-- Hero Content -->
+            <div class="max-w-7xl mx-auto px-4 py-12 md:px-8 md:py-20">
+                <!-- Breadcrumbs -->
+                <nav class="mb-8">
+                    <ol class="flex text-sm text-green-100">
+                        <li><a href="home.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li class="mx-2">/</li>
+                        <li class="text-green-200">Our Cabins</li>
+                    </ol>
+                </nav>
+                
+                <!-- Main Copy -->
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        Our <span class="bg-gradient-to-r from-green-200 to-blue-200 bg-clip-text text-transparent">Cabins</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-green-100 leading-relaxed max-w-2xl mx-auto">
+                        Discover serenity in our handcrafted cabins, nestled amidst ancient forests. Each retreat offers unparalleled comfort and a direct connection to nature's tranquility.
+                    </p>
+                </div>
+                
+                <!-- Featured Cabins Grid -->
+                <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cabin 1 -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="relative overflow-hidden rounded-xl mb-4">
+                            <img src="images/cabin1.jpg" alt="Pine Retreat Cabin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Pine Retreat</h3>
+                        <p class="text-green-100 text-sm leading-relaxed mb-4">A cozy cabin surrounded by towering pines, perfect for intimate getaways with modern amenities and rustic charm.</p>
+                        <button class="inline-flex items-center text-white hover:text-green-200 font-medium transition-colors group cabin-cta">
+                            <span>Cabin Info</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Cabin 2 -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="relative overflow-hidden rounded-xl mb-4">
+                            <img src="images/cabin2.jpg" alt="Maple Lodge Cabin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Maple Lodge</h3>
+                        <p class="text-green-100 text-sm leading-relaxed mb-4">Spacious family cabin with panoramic views, featuring a stone fireplace and private hot tub for ultimate relaxation.</p>
+                        <button class="inline-flex items-center text-white hover:text-green-200 font-medium transition-colors group cabin-cta">
+                            <span>Cabin Info</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Cabin 3 -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="relative overflow-hidden rounded-xl mb-4">
+                            <img src="images/cabin3.jpg" alt="Oak Haven Cabin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Oak Haven</h3>
+                        <p class="text-green-100 text-sm leading-relaxed mb-4">Luxurious cabin with vaulted ceilings, gourmet kitchen, and direct forest access for nature enthusiasts.</p>
+                        <button class="inline-flex items-center text-white hover:text-green-200 font-medium transition-colors group cabin-cta">
+                            <span>Cabin Info</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Additional Cabins for Showcase -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="relative overflow-hidden rounded-xl mb-4">
+                            <img src="images/cabin2.jpg" alt="Cedar Escape Cabin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Cedar Escape</h3>
+                        <p class="text-green-100 text-sm leading-relaxed mb-4">Intimate cabin with cedar walls, perfect for couples seeking privacy and romance in the woods.</p>
+                        <button class="inline-flex items-center text-white hover:text-green-200 font-medium transition-colors group cabin-cta">
+                            <span>Cabin Info</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="relative overflow-hidden rounded-xl mb-4">
+                            <img src="images/cabin3.jpg" alt="Birch Retreat Cabin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Birch Retreat</h3>
+                        <p class="text-green-100 text-sm leading-relaxed mb-4">Modern cabin with birch accents, featuring smart home technology and outdoor fire pit.</p>
+                        <button class="inline-flex items-center text-white hover:text-green-200 font-medium transition-colors group cabin-cta">
+                            <span>Cabin Info</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="relative overflow-hidden rounded-xl mb-4">
+                            <img src="images/cabin1.jpg" alt="Spruce Sanctuary Cabin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Spruce Sanctuary</h3>
+                        <p class="text-green-100 text-sm leading-relaxed mb-4">Secluded cabin with spruce forest views, ideal for writers and artists seeking inspiration.</p>
+                        <button class="inline-flex items-center text-white hover:text-green-200 font-medium transition-colors group cabin-cta">
+                            <span>Cabin Info</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Modal Overlay -->
+    <div id="cabin-modal" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white/95 backdrop-blur-md rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-white/20">
+                <div class="relative">
+                    <!-- Close Button -->
+                    <button id="close-modal" class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 hover:bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-gray-800 transition-colors shadow-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Modal Content -->
+                    <div id="modal-content" class="p-8">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

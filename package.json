@@ -1,17 +1,14 @@
 {
-  "name": "scrimba-ui-integration",
-  "description": "UI Scrimba lesson challenging responsiveness and modernizing websites",
-  "version": "1.0.0",
-  "type": "module",
+  "name": "Scrim-s0128pg",
+  "description": "https://scrimba.com/learn-ui-design-c024/~03c",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "@tailwindcss/vite": "^4.0.0",
-    "tailwindcss": "^4.0.0",
-    "vite": "^6.0.0"
-  }
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {}
 }
