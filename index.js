@@ -119,6 +119,11 @@ function openCabinModal(cabinId) {
     }
 
     console.log('Opening modal for cabin:', cabin.name);
+    console.log('Cabin data:', cabin);
+    
+    // Clear any existing content first
+    modalContent.innerHTML = '';
+    
     modalContent.innerHTML = `
         <div class="max-w-6xl mx-auto">
             <!-- Header Section -->
@@ -127,7 +132,7 @@ function openCabinModal(cabinId) {
                     <!-- Main Image -->
                     <div class="lg:w-1/2">
                         <div class="relative overflow-hidden rounded-3xl shadow-2xl">
-                            <img src="${cabin.image}" alt="${cabin.name}" class="w-full h-80 lg:h-96 object-cover">
+                            <img src="${cabin.image}" alt="${cabin.name}" class="w-full h-80 lg:h-96 object-cover" onerror="console.error('Image failed to load:', this.src)">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                             <div class="absolute bottom-6 left-6 text-white">
                                 <h1 class="text-4xl font-bold mb-2">${cabin.name}</h1>
@@ -268,6 +273,10 @@ function closeCabinModal() {
         onComplete: () => {
             modal.classList.add('hidden');
             document.body.style.overflow = 'auto';
+            // Clear content after animation
+            setTimeout(() => {
+                modalContent.innerHTML = '';
+            }, 100);
             console.log('Modal closed');
         }
     });
