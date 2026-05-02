@@ -49,10 +49,10 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-gray-200;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-gray-900;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -62,8 +62,16 @@
   @apply bg-gray-900/95 backdrop-blur-sm;
 }
 
+.theme-toggle {
+  @apply p-2 rounded-lg bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-gray-50 transition-colors duration-200;
+}
+
 .dark .theme-toggle {
   @apply bg-gray-800/80 backdrop-blur-sm border-gray-600/50 hover:bg-gray-700/80;
+}
+
+.theme-toggle svg {
+  @apply w-5 h-5 text-gray-600;
 }
 
 .dark .theme-toggle svg {

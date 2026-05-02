@@ -4,43 +4,38 @@ const sunIcon = document.getElementById('sun-icon');
 const moonIcon = document.getElementById('moon-icon');
 
 if (themeToggle && sunIcon && moonIcon) {
-    // Set dark mode as default
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
+    // Dark mode is already set in HTML, just update icons
+    sunIcon.classList.remove('hidden');
+    moonIcon.classList.add('hidden');
 
-    // Check for saved theme preference or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         document.documentElement.classList.remove('dark');
         document.documentElement.classList.add('light');
         sunIcon.classList.add('hidden');
         moonIcon.classList.remove('hidden');
-    } else {
-        document.documentElement.classList.add('dark');
-        document.documentElement.classList.remove('light');
-        sunIcon.classList.remove('hidden');
-        moonIcon.classList.add('hidden');
     }
 
-    themeToggle.addEventListener('click', () => {
-        const isDark = document.documentElement.classList.contains('dark');
+            themeToggle.addEventListener('click', () => {
+                const isDark = document.documentElement.classList.contains('dark');
 
-        if (isDark) {
-            // Switch to light mode
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-            sunIcon.classList.add('hidden');
-            moonIcon.classList.remove('hidden');
-            localStorage.setItem('theme', 'light');
-        } else {
-            // Switch to dark mode
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
-            sunIcon.classList.remove('hidden');
-            moonIcon.classList.add('hidden');
-            localStorage.setItem('theme', 'dark');
-        }
-    });
+                if (isDark) {
+                    // Switch to light mode
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    // Switch to dark mode
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.classList.remove('light');
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
 }
 
 // Mobile menu toggle
@@ -146,16 +141,6 @@ const cabins = [
         policies: ["2 night minimum", "No smoking", "Quiet hours enforced", "Check-in: 3 PM, Check-out: 11 AM"]
     }
 ];
-
-// Mobile menu toggle
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-
-if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-}
 
 // Modal functionality
 const modal = document.getElementById('cabin-modal');

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,8 +28,8 @@
                     <a href="home.html" class="text-2xl font-bold text-green-700 dark:text-green-300">scenic.forests</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="home.html" class="text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Home</a>
-                    <a href="index.html" class="text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Cabins</a>
+                    <a href="home.html" class="text-gray-800 hover:text-green-600 font-medium transition-colors dark:text-gray-100 dark:hover:text-green-400">Home</a>
+                    <a href="index.html" class="text-gray-800 hover:text-green-600 font-medium transition-colors dark:text-gray-100 dark:hover:text-green-400">Cabins</a>
                     <a href="#design-system" class="text-green-600 font-semibold dark:text-green-400">Design System</a>
                 </div>
                 
@@ -45,7 +45,7 @@
                     </button>
                     
                     <!-- Mobile menu button -->
-                    <button id="mobile-menu-btn" class="md:hidden text-gray-900 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400">
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-800 hover:text-green-600 dark:text-gray-100 dark:hover:text-green-400">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -56,8 +56,8 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm border-t border-gray-200 z-30 dark:bg-gray-900/95 dark:border-gray-700">
                 <nav class="px-4 py-6 space-y-4">
-                    <a href="home.html" class="block text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Home</a>
-                    <a href="index.html" class="block text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Cabins</a>
+                    <a href="home.html" class="block text-gray-800 hover:text-green-600 font-medium transition-colors dark:text-gray-100 dark:hover:text-green-400">Home</a>
+                    <a href="index.html" class="block text-gray-800 hover:text-green-600 font-medium transition-colors dark:text-gray-100 dark:hover:text-green-400">Cabins</a>
                     <a href="#design-system" class="block text-green-600 font-semibold dark:text-green-400">Design System</a>
                 </nav>
             </div>
@@ -391,22 +391,17 @@
         const moonIcon = document.getElementById('moon-icon');
 
         if (themeToggle && sunIcon && moonIcon) {
-            // Set dark mode as default
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
+            // Dark mode is already set in HTML, just update icons
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
 
-            // Check for saved theme preference or default to dark
-            const savedTheme = localStorage.getItem('theme') || 'dark';
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'light') {
                 document.documentElement.classList.remove('dark');
                 document.documentElement.classList.add('light');
                 sunIcon.classList.add('hidden');
                 moonIcon.classList.remove('hidden');
-            } else {
-                document.documentElement.classList.add('dark');
-                document.documentElement.classList.remove('light');
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
             }
 
             themeToggle.addEventListener('click', () => {
