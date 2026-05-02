@@ -78,13 +78,37 @@
   @apply text-gray-200;
 }
 
-/* Card styles for both themes */
-.card-light {
-  @apply bg-white/80 backdrop-blur-sm border-white/20;
+/* Theme-based navigation styles */
+nav {
+  @apply sticky top-0 z-40 shadow-sm backdrop-blur-sm;
 }
 
-.card-dark {
-  @apply bg-gray-800/80 backdrop-blur-sm border-gray-600/30;
+.light nav {
+  @apply bg-white/95;
+}
+
+.dark nav {
+  @apply bg-gray-900/95;
+}
+
+.nav-link {
+  @apply font-medium transition-colors;
+}
+
+.light .nav-link {
+  @apply text-gray-800 hover:text-green-600;
+}
+
+.dark .nav-link {
+  @apply text-gray-100 hover:text-green-400;
+}
+
+.light .nav-link.active {
+  @apply text-green-600;
+}
+
+.dark .nav-link.active {
+  @apply text-green-400;
 }
 
 /* Button styles for both themes */
