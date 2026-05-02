@@ -111,6 +111,47 @@ nav {
   @apply text-green-400;
 }
 
+/* Hero section theme styles */
+.light .hero-h1 {
+  @apply text-gray-900;
+}
+
+.dark .hero-h1 {
+  @apply text-white;
+}
+
+.light .hero-p {
+  @apply text-gray-700;
+}
+
+.dark .hero-p {
+  @apply text-green-50;
+}
+
+.light .hero-gradient-text {
+  @apply from-green-700 to-blue-700;
+}
+
+.dark .hero-gradient-text {
+  @apply from-green-200 to-blue-200;
+}
+
+.light .hero-btn-primary {
+  @apply bg-green-600 hover:bg-green-700 text-white;
+}
+
+.dark .hero-btn-primary {
+  @apply bg-gray-800 hover:bg-gray-700 text-green-300;
+}
+
+.light .hero-btn-secondary {
+  @apply border-green-600 text-green-600 hover:bg-green-600 hover:text-white;
+}
+
+.dark .hero-btn-secondary {
+  @apply border-white text-white hover:bg-gray-800 hover:text-green-300;
+}
+
 /* Button styles for both themes */
 .btn-primary-light {
   @apply bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white;
@@ -139,6 +180,14 @@ nav {
 .text-accent-dark { @apply text-emerald-300; }
 
 /* Seasonal gradient overrides for dark mode */
+.light .hero-gradient {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(209, 250, 229, 0.8) 25%,
+    rgba(187, 247, 208, 0.75) 50%,
+    rgba(220, 252, 231, 0.7) 100%);
+}
+
 .dark .hero-gradient {
   background: linear-gradient(135deg,
     rgba(22, 101, 52, 0.9) 0%,

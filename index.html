@@ -12,7 +12,7 @@
 <body class="bg-white text-gray-900" style="font-family: 'Montserrat', sans-serif;">
     <!-- Hero Section with Gradient Overlay -->
     <div class="relative min-h-screen bg-cover bg-center" style="background-image: url('images/forest-bg-2.jpg');">
-        <div class="absolute inset-0 bg-gradient-to-br from-green-800/80 via-green-600/70 to-blue-500/60"></div>
+        <div class="absolute inset-0 light:hero-gradient dark:bg-gradient-to-br dark:from-green-800/80 dark:via-green-600/70 dark:to-blue-500/60"></div>
         
         <div class="relative z-10">
             <!-- Navigation -->
@@ -68,10 +68,10 @@
             <div class="max-w-7xl mx-auto px-4 py-12 md:px-8 md:py-20">
                 <!-- Main Copy -->
                 <div class="text-center max-w-4xl mx-auto">
-                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                        Our <span class="bg-gradient-to-r from-green-200 to-blue-200 bg-clip-text text-transparent">Cabins</span>
+                    <h1 class="text-4xl md:text-6xl font-bold hero-h1 mb-6 leading-tight">
+                        Our <span class="bg-gradient-to-r hero-gradient-text bg-clip-text text-transparent">Cabins</span>
                     </h1>
-                    <p class="text-lg md:text-xl text-green-100 leading-relaxed max-w-2xl mx-auto">
+                    <p class="text-lg md:text-xl hero-p leading-relaxed max-w-2xl mx-auto">
                         Discover serenity in our handcrafted cabins, nestled amidst ancient forests. Each retreat offers unparalleled comfort and a direct connection to nature's tranquility.
                     </p>
                 </div>
@@ -79,14 +79,14 @@
                 <!-- Featured Cabins Grid -->
                 <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Cabin 1 -->
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group light:bg-white/90 light:hover:bg-white dark:bg-white/10 dark:hover:bg-white/20">
                         <div class="relative overflow-hidden rounded-xl mb-4">
                             <img src="images/cabin1.jpg" alt="Pine Retreat Cabin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-2">Pine Retreat</h3>
-                        <p class="text-green-100 text-sm leading-relaxed mb-4">A cozy cabin surrounded by towering pines, perfect for intimate getaways with modern amenities and rustic charm.</p>
-                        <button class="inline-flex items-center text-white hover:text-green-200 font-medium transition-colors group cabin-cta">
+                        <h3 class="text-xl font-semibold hero-h1 mb-2">Pine Retreat</h3>
+                        <p class="hero-p text-sm leading-relaxed mb-4">A cozy cabin surrounded by towering pines, perfect for intimate getaways with modern amenities and rustic charm.</p>
+                        <button class="inline-flex items-center hero-p hover:text-green-200 font-medium transition-colors group cabin-cta">
                             <span>Cabin Info</span>
                             <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -95,14 +95,14 @@
                     </div>
                     
                     <!-- Cabin 2 -->
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group light:bg-white/90 light:hover:bg-white dark:bg-white/10 dark:hover:bg-white/20">
                         <div class="relative overflow-hidden rounded-xl mb-4">
                             <img src="images/cabin2.jpg" alt="Maple Lodge Cabin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-2">Maple Lodge</h3>
-                        <p class="text-green-100 text-sm leading-relaxed mb-4">Spacious family cabin with panoramic views, featuring a stone fireplace and private hot tub for ultimate relaxation.</p>
-                        <button class="inline-flex items-center text-white hover:text-green-200 font-medium transition-colors group cabin-cta">
+                        <h3 class="text-xl font-semibold hero-h1 mb-2">Maple Lodge</h3>
+                        <p class="hero-p text-sm leading-relaxed mb-4">Spacious family cabin with panoramic views, featuring a stone fireplace and private hot tub for ultimate relaxation.</p>
+                        <button class="inline-flex items-center hero-p hover:text-green-200 font-medium transition-colors group cabin-cta">
                             <span>Cabin Info</span>
                             <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -111,14 +111,14 @@
                     </div>
                     
                     <!-- Cabin 3 -->
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group light:bg-white/90 light:hover:bg-white dark:bg-white/10 dark:hover:bg-white/20">
                         <div class="relative overflow-hidden rounded-xl mb-4">
                             <img src="images/cabin3.jpg" alt="Oak Haven Cabin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-2">Oak Haven</h3>
-                        <p class="text-green-100 text-sm leading-relaxed mb-4">Luxurious cabin with vaulted ceilings, gourmet kitchen, and direct forest access for nature enthusiasts.</p>
-                        <button class="inline-flex items-center text-white hover:text-green-200 font-medium transition-colors group cabin-cta">
+                        <h3 class="text-xl font-semibold hero-h1 mb-2">Oak Haven</h3>
+                        <p class="hero-p text-sm leading-relaxed mb-4">Luxurious cabin with vaulted ceilings, gourmet kitchen, and direct forest access for nature enthusiasts.</p>
+                        <button class="inline-flex items-center hero-p hover:text-green-200 font-medium transition-colors group cabin-cta">
                             <span>Cabin Info</span>
                             <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -127,14 +127,14 @@
                     </div>
                     
                     <!-- Additional Cabins for Showcase -->
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group light:bg-white/90 light:hover:bg-white dark:bg-white/10 dark:hover:bg-white/20">
                         <div class="relative overflow-hidden rounded-xl mb-4">
                             <img src="images/cabin2.jpg" alt="Cedar Escape Cabin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-2">Cedar Escape</h3>
-                        <p class="text-green-100 text-sm leading-relaxed mb-4">Intimate cabin with cedar walls, perfect for couples seeking privacy and romance in the woods.</p>
-                        <button class="inline-flex items-center text-white hover:text-green-200 font-medium transition-colors group cabin-cta">
+                        <h3 class="text-xl font-semibold hero-h1 mb-2">Cedar Escape</h3>
+                        <p class="hero-p text-sm leading-relaxed mb-4">Intimate cabin with cedar walls, perfect for couples seeking privacy and romance in the woods.</p>
+                        <button class="inline-flex items-center hero-p hover:text-green-200 font-medium transition-colors group cabin-cta">
                             <span>Cabin Info</span>
                             <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -142,14 +142,14 @@
                         </button>
                     </div>
                     
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group light:bg-white/90 light:hover:bg-white dark:bg-white/10 dark:hover:bg-white/20">
                         <div class="relative overflow-hidden rounded-xl mb-4">
                             <img src="images/cabin3.jpg" alt="Birch Retreat Cabin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-2">Birch Retreat</h3>
-                        <p class="text-green-100 text-sm leading-relaxed mb-4">Modern cabin with birch accents, featuring smart home technology and outdoor fire pit.</p>
-                        <button class="inline-flex items-center text-white hover:text-green-200 font-medium transition-colors group cabin-cta">
+                        <h3 class="text-xl font-semibold hero-h1 mb-2">Birch Retreat</h3>
+                        <p class="hero-p text-sm leading-relaxed mb-4">Modern cabin with birch accents, featuring smart home technology and outdoor fire pit.</p>
+                        <button class="inline-flex items-center hero-p hover:text-green-200 font-medium transition-colors group cabin-cta">
                             <span>Cabin Info</span>
                             <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -157,14 +157,14 @@
                         </button>
                     </div>
                     
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl group light:bg-white/90 light:hover:bg-white dark:bg-white/10 dark:hover:bg-white/20">
                         <div class="relative overflow-hidden rounded-xl mb-4">
                             <img src="images/cabin1.jpg" alt="Spruce Sanctuary Cabin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <h3 class="text-xl font-semibold text-white mb-2">Spruce Sanctuary</h3>
-                        <p class="text-green-100 text-sm leading-relaxed mb-4">Secluded cabin with spruce forest views, ideal for writers and artists seeking inspiration.</p>
-                        <button class="inline-flex items-center text-white hover:text-green-200 font-medium transition-colors group cabin-cta">
+                        <h3 class="text-xl font-semibold hero-h1 mb-2">Spruce Sanctuary</h3>
+                        <p class="hero-p text-sm leading-relaxed mb-4">Secluded cabin with spruce forest views, ideal for writers and artists seeking inspiration.</p>
+                        <button class="inline-flex items-center hero-p hover:text-green-200 font-medium transition-colors group cabin-cta">
                             <span>Cabin Info</span>
                             <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
