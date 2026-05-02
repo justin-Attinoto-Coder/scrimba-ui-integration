@@ -259,6 +259,7 @@ function openCabinModal(cabinId) {
 }
 
 function closeCabinModal() {
+    console.log('Closing modal');
     gsap.to(modalContent, {
         duration: 0.3,
         y: 50,
@@ -267,6 +268,7 @@ function closeCabinModal() {
         onComplete: () => {
             modal.classList.add('hidden');
             document.body.style.overflow = 'auto';
+            console.log('Modal closed');
         }
     });
 }
@@ -285,7 +287,8 @@ document.addEventListener('click', (e) => {
         }
     }
     
-    if (e.target.id === 'close-modal' || e.target.id === 'cabin-modal') {
+    // Close modal when clicking close button or modal backdrop
+    if (e.target.closest('#close-modal') || e.target.id === 'cabin-modal') {
         console.log('Modal close triggered');
         closeCabinModal();
     }
