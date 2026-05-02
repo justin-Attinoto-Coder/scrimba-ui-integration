@@ -133,7 +133,7 @@ nav {
 }
 
 .dark .hero-gradient-text {
-  @apply from-green-200 to-blue-200;
+  @apply from-green-400 to-blue-400;
 }
 
 .light .hero-btn-primary {
@@ -227,4 +227,13 @@ nav {
 /* Smooth transitions for theme changes */
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Theme-aware background images */
+.light .bg-forest-light {
+  background-image: url('images/forest-bg-2.jpg');
+}
+
+.dark .bg-forest-dark {
+  background-image: url('images/forest.jpg');
 }
