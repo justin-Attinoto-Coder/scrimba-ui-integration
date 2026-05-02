@@ -1,3 +1,48 @@
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const sunIcon = document.getElementById('sun-icon');
+const moonIcon = document.getElementById('moon-icon');
+
+if (themeToggle && sunIcon && moonIcon) {
+    // Set dark mode as default
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+
+    // Check for saved theme preference or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+    } else {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+
+        if (isDark) {
+            // Switch to light mode
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+            localStorage.setItem('theme', 'light');
+        } else {
+            // Switch to dark mode
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+}
+
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');

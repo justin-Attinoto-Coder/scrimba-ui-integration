@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenic Forests - Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .pattern-section { margin-bottom: 4rem; }
+        .pattern-example { border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1.5rem; margin: 1rem 0; background: white; }
+        .color-swatch { width: 4rem; height: 4rem; border-radius: 0.25rem; display: inline-block; margin: 0.25rem; border: 1px solid #d1d5db; }
+        .theme-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+        .component-demo { background: white; border-radius: 0.5rem; padding: 1rem; margin: 0.5rem 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        
+        .dark .pattern-example { background: #1f2937; border-color: #374151; }
+        .dark .component-demo { background: #1f2937; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100" style="font-family: 'Montserrat', sans-serif;">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-40 dark:bg-gray-900 dark:shadow-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="home.html" class="text-2xl font-bold text-green-700 dark:text-green-300">scenic.forests</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="home.html" class="text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Home</a>
+                    <a href="index.html" class="text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Cabins</a>
+                    <a href="#design-system" class="text-green-600 font-semibold dark:text-green-400">Design System</a>
+                </div>
+                
+                <!-- Theme Toggle -->
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="theme-toggle">
+                        <svg id="sun-icon" class="hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="moon-icon" class="block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-900 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm border-t border-gray-200 z-30 dark:bg-gray-900/95 dark:border-gray-700">
+                <nav class="px-4 py-6 space-y-4">
+                    <a href="home.html" class="block text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Home</a>
+                    <a href="index.html" class="block text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Cabins</a>
+                    <a href="#design-system" class="block text-green-600 font-semibold dark:text-green-400">Design System</a>
+                </nav>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">Design System & Pattern Library</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                A comprehensive collection of reusable components, seasonal themes, and design patterns for the Scenic Forests brand.
+            </p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Color System -->
+        <section class="pattern-section" id="colors">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">🎨 Color System</h2>
+
+            <div class="mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Primary Palette</h3>
+                <div class="flex flex-wrap gap-4">
+                    <div class="text-center">
+                        <div class="color-swatch bg-green-600"></div>
+                        <p class="text-sm mt-2">Green 600<br/>#16a34a</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-green-700"></div>
+                        <p class="text-sm mt-2">Green 700<br/>#15803d</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-blue-600"></div>
+                        <p class="text-sm mt-2">Blue 600<br/>#2563eb</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="color-swatch bg-slate-600"></div>
+                        <p class="text-sm mt-2">Slate 600<br/>#475569</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Seasonal Themes</h3>
+                <div class="theme-grid">
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-green-800 mb-3">🌸 Spring Theme</h4>
+                        <div class="space-y-2 text-sm">
+                            <div>Background: <code class="bg-gray-100 px-2 py-1 rounded">from-green-900/90 via-emerald-800/85 to-teal-700/80</code></div>
+                            <div>Text: <code class="bg-gray-100 px-2 py-1 rounded">text-green-800, text-green-700</code></div>
+                            <div>Accents: <code class="bg-gray-100 px-2 py-1 rounded">emerald-500, teal-500</code></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-lime-800 mb-3">☀️ Summer Theme</h4>
+                        <div class="space-y-2 text-sm">
+                            <div>Background: <code class="bg-gray-100 px-2 py-1 rounded">from-green-800/90 via-lime-700/85 to-emerald-600/80</code></div>
+                            <div>Text: <code class="bg-gray-100 px-2 py-1 rounded">text-lime-800, text-lime-700</code></div>
+                            <div>Accents: <code class="bg-gray-100 px-2 py-1 rounded">lime-500, emerald-500</code></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-emerald-800 mb-3">🍂 Autumn Theme</h4>
+                        <div class="space-y-2 text-sm">
+                            <div>Background: <code class="bg-gray-100 px-2 py-1 rounded">from-green-800/90 via-olive-700/85 to-teal-600/80</code></div>
+                            <div>Text: <code class="bg-gray-100 px-2 py-1 rounded">text-emerald-800, text-emerald-700</code></div>
+                            <div>Accents: <code class="bg-gray-100 px-2 py-1 rounded">olive-500, teal-500</code></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-blue-800 mb-3">❄️ Winter Theme</h4>
+                        <div class="space-y-2 text-sm">
+                            <div>Background: <code class="bg-gray-100 px-2 py-1 rounded">from-green-800/90 via-blue-700/85 to-slate-600/80</code></div>
+                            <div>Text: <code class="bg-gray-100 px-2 py-1 rounded">text-blue-800, text-slate-700</code></div>
+                            <div>Accents: <code class="bg-gray-100 px-2 py-1 rounded">blue-500, cyan-500</code></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section class="pattern-section" id="typography">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">📝 Typography</h2>
+
+            <div class="bg-white rounded-lg p-8 shadow-sm mb-6">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Font Family: Montserrat</h3>
+                <div class="space-y-4">
+                    <div>
+                        <p class="text-4xl font-bold">Display Large (4xl, bold)</p>
+                        <code class="text-sm text-gray-600">text-4xl font-bold</code>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold">Heading Large (3xl, bold)</p>
+                        <code class="text-sm text-gray-600">text-3xl font-bold</code>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-semibold">Heading Medium (2xl, semibold)</p>
+                        <code class="text-sm text-gray-600">text-2xl font-semibold</code>
+                    </div>
+                    <div>
+                        <p class="text-lg font-medium">Body Large (lg, medium)</p>
+                        <code class="text-sm text-gray-600">text-lg font-medium</code>
+                    </div>
+                    <div>
+                        <p class="text-base">Body Regular (base, normal)</p>
+                        <code class="text-sm text-gray-600">text-base</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Components -->
+        <section class="pattern-section" id="components">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">🧩 Components</h2>
+
+            <!-- Buttons -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Buttons</h3>
+
+                <div class="component-demo">
+                    <h4 class="font-semibold mb-3">Primary Button</h4>
+                    <button class="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+                        Primary Action
+                    </button>
+                    <code class="block mt-2 text-sm text-gray-600">bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105</code>
+                </div>
+
+                <div class="component-demo">
+                    <h4 class="font-semibold mb-3">Secondary Button</h4>
+                    <button class="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">
+                        Secondary Action
+                    </button>
+                    <code class="block mt-2 text-sm text-gray-600">border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300</code>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Cards</h3>
+
+                <div class="component-demo">
+                    <h4 class="font-semibold mb-3">Feature Card</h4>
+                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-green-100/50 hover:scale-105 max-w-sm">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-green-800 mb-2">Feature Title</h3>
+                        <p class="text-green-700">Feature description goes here with supporting details.</p>
+                    </div>
+                    <code class="block mt-2 text-sm text-gray-600">bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-green-100/50 hover:scale-105</code>
+                </div>
+
+                <div class="component-demo">
+                    <h4 class="font-semibold mb-3">Testimonial Card</h4>
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-emerald-100/50 hover:shadow-xl transition-all duration-300 hover:scale-105 max-w-md">
+                        <div class="flex items-center mb-4">
+                            <img src="images/person.jpg" alt="User" class="w-10 h-10 rounded-full object-cover mr-3 ring-2 ring-emerald-200">
+                            <div>
+                                <h4 class="font-semibold text-emerald-900">User Name</h4>
+                                <p class="text-sm text-emerald-700">Role/Title</p>
+                            </div>
+                        </div>
+                        <p class="text-emerald-800 italic">"Testimonial text goes here with customer feedback and experience details."</p>
+                        <div class="flex text-emerald-500 mt-3">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <code class="block mt-2 text-sm text-gray-600">bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-emerald-100/50 hover:shadow-xl transition-all duration-300 hover:scale-105</code>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Navigation</h3>
+
+                <div class="component-demo">
+                    <h4 class="font-semibold mb-3">Header Navigation</h4>
+                    <nav class="bg-white/95 backdrop-blur-sm shadow-sm rounded-lg">
+                        <div class="px-4 py-3">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <a href="#" class="text-xl font-bold text-green-700">scenic.forests</a>
+                                </div>
+                                <div class="flex items-center space-x-6">
+                                    <a href="#" class="text-gray-900 hover:text-green-600 font-medium transition-colors">Home</a>
+                                    <a href="#" class="text-gray-900 hover:text-green-600 font-medium transition-colors">Cabins</a>
+                                    <a href="#" class="text-green-600 font-semibold">Design System</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <code class="block mt-2 text-sm text-gray-600">bg-white/95 backdrop-blur-sm shadow-sm</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layout Patterns -->
+        <section class="pattern-section" id="layouts">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">📐 Layout Patterns</h2>
+
+            <div class="mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Section Spacing</h3>
+                <div class="space-y-4">
+                    <div class="bg-gray-100 p-4 rounded">
+                        <p class="font-semibold">Hero Section: <code>py-20</code></p>
+                        <p class="text-sm text-gray-600">Large vertical padding for impactful sections</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded">
+                        <p class="font-semibold">Content Section: <code>py-16 to py-20</code></p>
+                        <p class="text-sm text-gray-600">Standard section padding with breathing room</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded">
+                        <p class="font-semibold">Component Spacing: <code>mb-6, mb-8, mb-12</code></p>
+                        <p class="text-sm text-gray-600">Consistent margin bottom values for hierarchy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Grid Systems</h3>
+                <div class="space-y-4">
+                    <div class="bg-gray-100 p-4 rounded">
+                        <p class="font-semibold">3-Column Grid: <code>grid-cols-1 md:grid-cols-2 lg:grid-cols-3</code></p>
+                        <p class="text-sm text-gray-600">Responsive grid for feature cards and testimonials</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded">
+                        <p class="font-semibold">2-Column Grid: <code>grid-cols-1 lg:grid-cols-2</code></p>
+                        <p class="text-sm text-gray-600">For destination showcases and side-by-side content</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded">
+                        <p class="font-semibold">Container: <code>max-w-7xl mx-auto px-4 sm:px-6 lg:px-8</code></p>
+                        <p class="text-sm text-gray-600">Standard container with responsive padding</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <section class="pattern-section" id="guidelines">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">📋 Usage Guidelines</h2>
+
+            <div class="bg-white rounded-lg p-8 shadow-sm mb-6">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">🎯 When to Use Each Theme</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-green-800 mb-2">Spring Theme (Features)</h4>
+                        <p class="text-sm text-gray-600 mb-3">Use for introductory content, key features, and welcoming sections that establish trust and showcase capabilities.</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Feature highlights</li>
+                            <li>• Service explanations</li>
+                            <li>• About sections</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lime-800 mb-2">Summer Theme (Destinations)</h4>
+                        <p class="text-sm text-gray-600 mb-3">Perfect for showcasing adventure options, travel destinations, and exciting experiences that inspire action.</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Destination galleries</li>
+                            <li>• Activity showcases</li>
+                            <li>• Call-to-action sections</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-emerald-800 mb-2">Autumn Theme (Testimonials)</h4>
+                        <p class="text-sm text-gray-600 mb-3">Ideal for social proof, customer stories, and building credibility through authentic experiences.</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Customer testimonials</li>
+                            <li>• Review sections</li>
+                            <li>• Success stories</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-2">Winter Theme (FAQ/Support)</h4>
+                        <p class="text-sm text-gray-600 mb-3">Best for informational content, FAQs, and sections that provide clarity and reduce uncertainty.</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• FAQ sections</li>
+                            <li>• Help documentation</li>
+                            <li>• Contact information</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-8 shadow-sm">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">🔧 Implementation Notes</h3>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <h4 class="font-semibold text-gray-800">Accessibility First</h4>
+                        <p class="text-sm text-gray-600">All gradients maintain AAA contrast ratios. Test color combinations using automated tools before implementation.</p>
+                    </div>
+
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h4 class="font-semibold text-gray-800">Performance Considerations</h4>
+                        <p class="text-sm text-gray-600">Use backdrop-blur effects sparingly. Optimize images and consider lazy loading for better performance.</p>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-4">
+                        <h4 class="font-semibold text-gray-800">Responsive Design</h4>
+                        <p class="text-sm text-gray-600">All components are mobile-first. Test on various screen sizes and ensure touch targets meet minimum requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">© 2024 Scenic Forests Design System. Built with ❤️ for consistency and scalability.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <script>
+        // Theme toggle functionality for design system page
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+
+        if (themeToggle && sunIcon && moonIcon) {
+            // Set dark mode as default
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+
+            // Check for saved theme preference or default to dark
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'light') {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                const isDark = document.documentElement.classList.contains('dark');
+
+                if (isDark) {
+                    // Switch to light mode
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    // Switch to dark mode
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.classList.remove('light');
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

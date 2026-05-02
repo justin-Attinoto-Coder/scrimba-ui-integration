@@ -1,3 +1,58 @@
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const sunIcon = document.getElementById('sun-icon');
+const moonIcon = document.getElementById('moon-icon');
+
+if (themeToggle && sunIcon && moonIcon) {
+    // Set dark mode as default
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+
+    // Check for saved theme preference or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+    } else {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+
+        if (isDark) {
+            // Switch to light mode
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+            localStorage.setItem('theme', 'light');
+        } else {
+            // Switch to dark mode
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+}
+
+// Mobile menu toggle
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
+
 // Cabin data
 const cabins = [
     {
@@ -251,7 +306,11 @@ function openCabinModal(cabinId) {
         </div>
     `;
 
+    console.log('Modal content set, length:', modalContent.innerHTML.length);
+    console.log('Modal content preview:', modalContent.innerHTML.substring(0, 200) + '...');
+
     modal.classList.remove('hidden');
+    console.log('Modal classList after remove hidden:', modal.classList);
     document.body.style.overflow = 'hidden';
     
     // Animate modal entrance
@@ -297,8 +356,11 @@ document.addEventListener('click', (e) => {
     }
     
     // Close modal when clicking close button or modal backdrop
-    if (e.target.closest('#close-modal') || e.target.id === 'cabin-modal') {
-        console.log('Modal close triggered');
+    if (e.target.closest('#close-modal')) {
+        console.log('Close button clicked');
+        closeCabinModal();
+    } else if (e.target.id === 'cabin-modal') {
+        console.log('Backdrop clicked');
         closeCabinModal();
     }
 });

@@ -11,60 +11,74 @@
 </head>
 <body class="bg-white text-gray-900" style="font-family: 'Montserrat', sans-serif;">
     <!-- Navigation -->
-    <nav class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-40">
+    <nav class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-40 dark:bg-gray-900/95">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="home.html" class="text-2xl font-bold text-green-700">scenic.forests</a>
+                    <a href="home.html" class="text-2xl font-bold text-green-700 dark:text-green-300">scenic.forests</a>
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="home.html" class="text-green-600 font-semibold">Home</a>
-                    <a href="index.html" class="text-gray-900 hover:text-green-600 font-medium transition-colors">Cabins</a>
-                    <a href="#destinations" class="text-gray-900 hover:text-green-600 font-medium transition-colors">Destinations</a>
-                    <a href="#reservations" class="text-gray-900 hover:text-green-600 font-medium transition-colors">Reservations</a>
-                    <a href="#faq" class="text-gray-900 hover:text-green-600 font-medium transition-colors">FAQ</a>
+                    <a href="home.html" class="text-green-600 font-semibold dark:text-green-400">Home</a>
+                    <a href="index.html" class="text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Cabins</a>
+                    <a href="design-system.html" class="text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Design System</a>
+                    <a href="#destinations" class="text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Destinations</a>
+                    <a href="#reservations" class="text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Reservations</a>
+                    <a href="#faq" class="text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">FAQ</a>
                 </div>
                 
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-btn" class="md:hidden text-gray-900 hover:text-green-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <!-- Theme Toggle -->
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="theme-toggle">
+                        <svg id="sun-icon" class="hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="moon-icon" class="block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-900 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
             
             <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="home.html" class="text-green-600 font-semibold">Home</a>
-                    <a href="index.html" class="text-gray-900 hover:text-green-600 font-medium">Cabins</a>
-                    <a href="#destinations" class="text-gray-900 hover:text-green-600 font-medium">Destinations</a>
-                    <a href="#reservations" class="text-gray-900 hover:text-green-600 font-medium">Reservations</a>
-                    <a href="#faq" class="text-gray-900 hover:text-green-600 font-medium">FAQ</a>
-                </div>
+            <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm border-t border-gray-200 z-30 dark:bg-gray-900/95 dark:border-gray-700">
+                <nav class="px-4 py-6 space-y-4">
+                    <a href="home.html" class="block text-green-600 font-semibold dark:text-green-400">Home</a>
+                    <a href="index.html" class="block text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Cabins</a>
+                    <a href="design-system.html" class="block text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Design System</a>
+                    <a href="#destinations" class="block text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Destinations</a>
+                    <a href="#reservations" class="block text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">Reservations</a>
+                    <a href="#faq" class="block text-gray-900 hover:text-green-600 font-medium transition-colors dark:text-gray-300 dark:hover:text-green-400">FAQ</a>
+                </nav>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/forest.jpg');">
-            <div class="absolute inset-0 bg-gradient-to-br from-green-900/80 via-green-700/70 to-blue-600/60"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/forest-bg-2.jpg');">
+            <div class="absolute inset-0 hero-gradient"></div>
         </div>
         
         <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
             <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                Discover Nature's <span class="bg-gradient-to-r from-green-300 to-blue-300 bg-clip-text text-transparent">Hidden Gems</span>
+                Discover Nature's <span class="bg-gradient-to-r from-green-300 to-blue-300 bg-clip-text text-transparent dark:from-green-200 dark:to-blue-200">Hidden Gems</span>
             </h1>
-            <p class="text-lg sm:text-xl lg:text-2xl text-green-100 mb-8 leading-relaxed">
+            <p class="text-lg sm:text-xl lg:text-2xl text-green-100 dark:text-green-50 mb-8 leading-relaxed">
                 Embark on unforgettable journeys through pristine forests, majestic mountains, and serene wilderness. Your adventure awaits.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#destinations" class="bg-white hover:bg-gray-50 text-green-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+                <a href="#destinations" class="bg-white hover:bg-gray-50 text-green-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-green-300 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
                     Explore Destinations
                 </a>
-                <a href="#reservations" class="border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
+                <a href="#reservations" class="border-2 border-white text-white hover:bg-white hover:text-green-700 dark:hover:bg-gray-800 dark:hover:text-green-300 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
                     Start Planning
                 </a>
             </div>
@@ -80,112 +94,127 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Features Section - Spring Theme -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/forest-bg-2.jpg');">
+            <div class="absolute inset-0 spring-gradient"></div>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-200/30 to-emerald-200/30 rounded-full -translate-x-48 -translate-y-48 dark:from-green-300/20 dark:to-emerald-300/20"></div>
+        <div class="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-teal-200/30 to-cyan-200/30 rounded-full translate-x-40 translate-y-40 dark:from-teal-300/20 dark:to-cyan-300/20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Why Choose Scenic Forests?</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-green-700 to-emerald-700 bg-clip-text text-transparent dark:from-green-300 dark:to-emerald-300 mb-4">Why Choose Scenic Forests?</h2>
+                <p class="text-lg text-green-700 dark:text-green-300 max-w-2xl mx-auto">
                     We connect adventurers with the world's most breathtaking natural landscapes, providing unparalleled access to outdoor experiences.
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="card-light dark:card-dark rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-green-100/50 dark:border-green-600/30 hover:scale-105">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center mb-6 shadow-lg dark:from-green-500 dark:to-emerald-600">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Expert Guides</h3>
-                    <p class="text-gray-600">Our certified wilderness experts ensure safe, memorable adventures tailored to your skill level and interests.</p>
+                    <h3 class="text-xl font-semibold text-green-800 dark:text-green-200 mb-4">Expert Guides</h3>
+                    <p class="text-green-700 dark:text-green-300">Our certified wilderness experts ensure safe, memorable adventures tailored to your skill level and interests.</p>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="card-light dark:card-dark rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100/50 dark:border-blue-600/30 hover:scale-105">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl flex items-center justify-center mb-6 shadow-lg dark:from-blue-500 dark:to-cyan-600">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Global Destinations</h3>
-                    <p class="text-gray-600">Access to over 500+ protected areas across 50+ countries, from Alaskan wilderness to Patagonian glaciers.</p>
+                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-4">Global Destinations</h3>
+                    <p class="text-blue-700 dark:text-blue-300">Access to over 500+ protected areas across 50+ countries, from Alaskan wilderness to Patagonian glaciers.</p>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="card-light dark:card-dark rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-100/50 dark:border-amber-600/30 hover:scale-105">
+                    <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center mb-6 shadow-lg dark:from-amber-500 dark:to-orange-600">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Sustainable Travel</h3>
-                    <p class="text-gray-600">Committed to eco-friendly practices that preserve natural habitats while providing authentic outdoor experiences.</p>
+                    <h3 class="text-xl font-semibold text-amber-800 dark:text-amber-200 mb-4">Sustainable Travel</h3>
+                    <p class="text-amber-700 dark:text-amber-300">Committed to eco-friendly practices that preserve natural habitats while providing authentic outdoor experiences.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Destinations Section -->
-    <section id="destinations" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Destinations Section - Summer Theme -->
+    <section id="destinations" class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/forest-bg-2.jpg');">
+            <div class="absolute inset-0 summer-gradient"></div>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-yellow-200/40 to-orange-200/40 rounded-full dark:from-yellow-300/30 dark:to-orange-300/30"></div>
+        <div class="absolute bottom-10 left-10 w-48 h-48 bg-gradient-to-tl from-red-200/40 to-pink-200/40 rounded-full dark:from-red-300/30 dark:to-pink-300/30"></div>
+        <div class="absolute top-1/2 left-1/4 w-32 h-32 bg-gradient-to-r from-amber-200/30 to-yellow-200/30 rounded-full dark:from-amber-300/20 dark:to-yellow-300/20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Featured Destinations</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-green-700 via-lime-600 to-emerald-600 bg-clip-text text-transparent dark:from-green-300 dark:via-lime-400 dark:to-emerald-400 mb-4">Featured Destinations</h2>
+                <p class="text-lg text-green-800 dark:text-green-200 max-w-2xl mx-auto">
                     Explore our most popular wilderness areas, each offering unique adventures and breathtaking scenery.
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Destination 1 -->
-                <div class="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm">
                     <img src="images/forest-bg-2.jpg" alt="Rocky Mountain Wilderness" class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-green-900/80 via-green-600/40 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
                         <h3 class="text-2xl font-bold mb-2">Rocky Mountain Wilderness</h3>
                         <p class="text-green-100 mb-4">Hike ancient trails, spot wildlife, and camp under starlit skies in Colorado's majestic peaks.</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-sm bg-white/20 px-3 py-1 rounded-full">7-14 days</span>
+                            <span class="text-sm bg-green-500/20 px-3 py-1 rounded-full">7-14 days</span>
                             <span class="text-lg font-semibold">$2,500+</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Destination 2 -->
-                <div class="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm">
                     <img src="images/forest.jpg" alt="Pacific Northwest Rainforest" class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-lime-900/80 via-lime-600/40 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
                         <h3 class="text-2xl font-bold mb-2">Pacific Northwest Rainforest</h3>
-                        <p class="text-green-100 mb-4">Discover ancient redwoods, misty trails, and coastal wilderness in Washington and Oregon.</p>
+                        <p class="text-lime-100 mb-4">Discover ancient redwoods, misty trails, and coastal wilderness in Washington and Oregon.</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-sm bg-white/20 px-3 py-1 rounded-full">5-10 days</span>
+                            <span class="text-sm bg-lime-500/20 px-3 py-1 rounded-full">5-10 days</span>
                             <span class="text-lg font-semibold">$1,800+</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Destination 3 -->
-                <div class="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm">
                     <img src="images/forest-bg-2.jpg" alt="Appalachian Trail Experience" class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-emerald-600/40 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
                         <h3 class="text-2xl font-bold mb-2">Appalachian Trail Experience</h3>
-                        <p class="text-green-100 mb-4">Trek through diverse ecosystems from Georgia to Maine, experiencing America's longest hiking trail.</p>
+                        <p class="text-emerald-100 mb-4">Trek through diverse ecosystems from Georgia to Maine, experiencing America's longest hiking trail.</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-sm bg-white/20 px-3 py-1 rounded-full">Custom</span>
+                            <span class="text-sm bg-emerald-500/20 px-3 py-1 rounded-full">Custom</span>
                             <span class="text-lg font-semibold">$3,200+</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Destination 4 -->
-                <div class="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm">
                     <img src="images/forest.jpg" alt="Yosemite National Park" class="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-teal-900/80 via-teal-600/40 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
                         <h3 class="text-2xl font-bold mb-2">Yosemite National Park</h3>
-                        <p class="text-green-100 mb-4">Climb granite peaks, hike waterfalls, and explore California's crown jewel of wilderness.</p>
+                        <p class="text-teal-100 mb-4">Climb granite peaks, hike waterfalls, and explore California's crown jewel of wilderness.</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-sm bg-white/20 px-3 py-1 rounded-full">3-7 days</span>
+                            <span class="text-sm bg-teal-500/20 px-3 py-1 rounded-full">3-7 days</span>
                             <span class="text-lg font-semibold">$1,200+</span>
                         </div>
                     </div>
@@ -193,62 +222,70 @@
             </div>
             
             <div class="text-center mt-12">
-                <a href="cabins.html" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors shadow-lg hover:shadow-xl">
+                <a href="index.html" class="btn-primary-light dark:btn-primary-dark px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
                     View All Destinations
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-green-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Testimonials Section - Autumn Theme -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/forest-bg-2.jpg');">
+            <div class="absolute inset-0 autumn-gradient"></div>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-red-200/30 to-orange-200/30 rounded-full translate-x-36 -translate-y-36 dark:from-red-300/20 dark:to-orange-300/20"></div>
+        <div class="absolute bottom-0 left-0 w-56 h-56 bg-gradient-to-tr from-amber-200/30 to-yellow-200/30 rounded-full -translate-x-28 translate-y-28 dark:from-amber-300/20 dark:to-yellow-300/20"></div>
+        <div class="absolute top-1/3 right-1/4 w-40 h-40 bg-gradient-to-r from-orange-200/25 to-red-200/25 rounded-full dark:from-orange-300/15 dark:to-red-300/15"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Adventurer Stories</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-green-700 via-emerald-600 to-teal-600 bg-clip-text text-transparent dark:from-green-300 dark:via-emerald-400 dark:to-teal-400 mb-4">Adventurer Stories</h2>
+                <p class="text-lg text-green-800 dark:text-green-200 max-w-2xl mx-auto">
                     Hear from fellow nature enthusiasts who discovered their next great adventure with us.
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-green-100/50 hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <div class="flex items-center mb-6">
-                        <img src="images/person.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <img src="images/person.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full object-cover mr-4 ring-2 ring-green-200">
                         <div>
-                            <h4 class="font-semibold text-gray-900">Sarah Johnson</h4>
-                            <p class="text-sm text-gray-600">Professional Photographer</p>
+                            <h4 class="font-semibold text-green-900">Sarah Johnson</h4>
+                            <p class="text-sm text-green-700">Professional Photographer</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"The Rocky Mountain trek exceeded all expectations. The guides were knowledgeable, the scenery breathtaking, and the wildlife encounters unforgettable. This was the adventure of a lifetime!"</p>
-                    <div class="flex text-yellow-400 mt-4">
+                    <p class="text-green-800 italic">"The Rocky Mountain trek exceeded all expectations. The guides were knowledgeable, the scenery breathtaking, and the wildlife encounters unforgettable. This was the adventure of a lifetime!"</p>
+                    <div class="flex text-green-500 mt-4">
                         ★★★★★
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-emerald-100/50 hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <div class="flex items-center mb-6">
-                        <img src="images/person.jpg" alt="Mike Chen" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <img src="images/person.jpg" alt="Mike Chen" class="w-12 h-12 rounded-full object-cover mr-4 ring-2 ring-emerald-200">
                         <div>
-                            <h4 class="font-semibold text-gray-900">Mike Chen</h4>
-                            <p class="text-sm text-gray-600">Software Engineer</p>
+                            <h4 class="font-semibold text-emerald-900">Mike Chen</h4>
+                            <p class="text-sm text-emerald-700">Software Engineer</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"As a city dweller, I was nervous about wilderness travel, but Scenic Forests made it accessible and safe. The Pacific Northwest experience reconnected me with nature in ways I never imagined."</p>
-                    <div class="flex text-yellow-400 mt-4">
+                    <p class="text-emerald-800 italic">"As a city dweller, I was nervous about wilderness travel, but Scenic Forests made it accessible and safe. The Pacific Northwest experience reconnected me with nature in ways I never imagined."</p>
+                    <div class="flex text-emerald-500 mt-4">
                         ★★★★★
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-teal-100/50 hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <div class="flex items-center mb-6">
-                        <img src="images/person.jpg" alt="Emma Rodriguez" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <img src="images/person.jpg" alt="Emma Rodriguez" class="w-12 h-12 rounded-full object-cover mr-4 ring-2 ring-teal-200">
                         <div>
-                            <h4 class="font-semibold text-gray-900">Emma Rodriguez</h4>
-                            <p class="text-sm text-gray-600">Environmental Scientist</p>
+                            <h4 class="font-semibold text-teal-900">Emma Rodriguez</h4>
+                            <p class="text-sm text-teal-700">Environmental Scientist</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"The commitment to sustainable travel is evident in every aspect. I loved learning about conservation efforts while exploring pristine wilderness areas. Highly recommend!"</p>
-                    <div class="flex text-yellow-400 mt-4">
+                    <p class="text-teal-800 italic">"The commitment to sustainable travel is evident in every aspect. I loved learning about conservation efforts while exploring pristine wilderness areas. Highly recommend!"</p>
+                    <div class="flex text-teal-500 mt-4">
                         ★★★★★
                     </div>
                 </div>
@@ -257,53 +294,64 @@
     </section>
 
     <!-- CTA Section -->
-    <section id="reservations" class="py-20 bg-gradient-to-br from-green-600 to-blue-600">
-        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+    <section id="reservations" class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/forest-bg-2.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-br from-green-900/95 via-blue-800/90 to-indigo-700/85 dark:from-green-800/95 dark:via-blue-700/90 dark:to-indigo-600/85"></div>
+        </div>
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
             <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Ready for Your Next Adventure?</h2>
-            <p class="text-lg text-green-100 mb-8 leading-relaxed">
-                Join thousands of nature lovers who trust Scenic Forests for their wilderness experiences. 
+            <p class="text-lg text-green-100 dark:text-green-50 mb-8 leading-relaxed">
+                Join thousands of nature lovers who trust Scenic Forests for their wilderness experiences.
                 Plan your perfect outdoor getaway today.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-white hover:bg-gray-50 text-green-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+                <button class="bg-white hover:bg-gray-50 text-green-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-green-300 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
                     Start Your Journey
                 </button>
-                <button class="border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
+                <button class="border-2 border-white text-white hover:bg-white hover:text-green-700 dark:hover:bg-gray-800 dark:hover:text-green-300 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
                     Contact Us
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- FAQ Section - Winter Theme -->
+    <section id="faq" class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/forest-bg-2.jpg');">
+            <div class="absolute inset-0 bg-gradient-to-br from-green-800/90 via-blue-700/85 to-slate-600/80"></div>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-80 h-80 bg-gradient-to-br from-blue-200/30 to-indigo-200/30 rounded-full -translate-x-40 -translate-y-40"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-slate-200/30 to-cyan-200/30 rounded-full translate-x-32 translate-y-32"></div>
+        <div class="absolute top-1/2 right-1/3 w-48 h-48 bg-gradient-to-r from-indigo-200/25 to-blue-200/25 rounded-full"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                <p class="text-lg text-gray-600">
+                <h2 class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-green-700 via-blue-600 to-slate-600 bg-clip-text text-transparent mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-green-700">
                     Get answers to common questions about planning your wilderness adventure.
                 </p>
             </div>
             
             <div class="space-y-6">
-                <div class="bg-gray-50 rounded-2xl p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">What experience level do I need?</h3>
-                    <p class="text-gray-600">We offer adventures for all skill levels, from beginner-friendly guided tours to expert-level expeditions. Our guides will match you with the perfect experience based on your fitness and experience.</p>
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-green-100/50 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-lg font-semibold text-green-800 mb-3">What experience level do I need?</h3>
+                    <p class="text-green-700">We offer adventures for all skill levels, from beginner-friendly guided tours to expert-level expeditions. Our guides will match you with the perfect experience based on your fitness and experience.</p>
                 </div>
                 
-                <div class="bg-gray-50 rounded-2xl p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">What should I bring?</h3>
-                    <p class="text-gray-600">We provide all essential gear including tents, sleeping bags, and cooking equipment. You'll need personal items like clothing appropriate for the weather, sturdy hiking boots, and any personal medications.</p>
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-100/50 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-3">What should I bring?</h3>
+                    <p class="text-blue-700">We provide all essential gear including tents, sleeping bags, and cooking equipment. You'll need personal items like clothing appropriate for the weather, sturdy hiking boots, and any personal medications.</p>
                 </div>
                 
-                <div class="bg-gray-50 rounded-2xl p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Are meals included?</h3>
-                    <p class="text-gray-600">Yes! All our packages include delicious, nutritionally balanced meals prepared by our expert chefs. We accommodate dietary restrictions and preferences.</p>
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-slate-100/50 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-lg font-semibold text-slate-800 mb-3">Are meals included?</h3>
+                    <p class="text-slate-700">Yes! All our packages include delicious, nutritionally balanced meals prepared by our expert chefs. We accommodate dietary restrictions and preferences.</p>
                 </div>
                 
-                <div class="bg-gray-50 rounded-2xl p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">What's your cancellation policy?</h3>
-                    <p class="text-gray-600">We offer flexible cancellation up to 30 days before your trip for a full refund. Cancellations within 30 days are eligible for rescheduling or partial refunds based on the circumstances.</p>
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-cyan-100/50 hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-lg font-semibold text-cyan-800 mb-3">What's your cancellation policy?</h3>
+                    <p class="text-cyan-700">We offer flexible cancellation up to 30 days before your trip for a full refund. Cancellations within 30 days are eligible for rescheduling or partial refunds based on the circumstances.</p>
                 </div>
             </div>
         </div>
