@@ -105,12 +105,20 @@ if (menuBtn && mobileMenu) {
 // Modal functionality
 const modal = document.getElementById('cabin-modal');
 const modalContent = document.getElementById('modal-content');
+
+if (!modal || !modalContent) {
+    console.error('Modal elements not found!');
+}
 const closeModal = document.getElementById('close-modal');
 
 function openCabinModal(cabinId) {
     const cabin = cabins.find(c => c.id === cabinId);
-    if (!cabin) return;
+    if (!cabin) {
+        console.error('Cabin not found:', cabinId);
+        return;
+    }
 
+    console.log('Opening modal for cabin:', cabin.name);
     modalContent.innerHTML = `
         <div class="max-w-6xl mx-auto">
             <!-- Header Section -->
@@ -267,12 +275,18 @@ function closeCabinModal() {
 document.addEventListener('click', (e) => {
     if (e.target.closest('.cabin-cta')) {
         e.preventDefault();
+        console.log('Cabin CTA clicked');
         const card = e.target.closest('.bg-white\\/10');
-        const cabinId = Array.from(card.parentElement.children).indexOf(card) + 1;
-        openCabinModal(cabinId);
+        console.log('Card found:', card);
+        if (card) {
+            const cabinId = Array.from(card.parentElement.children).indexOf(card) + 1;
+            console.log('Cabin ID:', cabinId);
+            openCabinModal(cabinId);
+        }
     }
     
     if (e.target.id === 'close-modal' || e.target.id === 'cabin-modal') {
+        console.log('Modal close triggered');
         closeCabinModal();
     }
 });
@@ -322,5 +336,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log("Scenic Forests — cabins page loaded 🚀");
-  .to("h1 span", {clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)"}, "-=.7")
-  .from("ul.featured-cabins li", {y: 50, opacity: 0, stagger: .3}, "-=.7")
