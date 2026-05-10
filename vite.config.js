@@ -6,8 +6,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: "index.html",
-        cabins: "cabins.html",
+        main: "home.html",
+        cabins: "index.html",
         "design-system": "design-system.html",
       },
     },

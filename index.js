@@ -167,7 +167,8 @@ function openCabinModal(cabinId) {
     // Clear any existing content first
     modalContent.innerHTML = '';
     
-    modalContent.innerHTML = `
+    // Generate content
+    const content = `
         <div class="max-w-6xl mx-auto">
             <!-- Header Section -->
             <div class="mb-8">
@@ -187,44 +188,44 @@ function openCabinModal(cabinId) {
                     <!-- Quick Info -->
                     <div class="lg:w-1/2 space-y-6">
                         <div class="bg-linear-to-br from-green-50 to-blue-50 p-6 rounded-2xl border border-green-100">
-                            <h3 class="text-xl font-bold text-gray-800 mb-4">At a Glance</h3>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">At a Glance</h3>
                             <div class="grid grid-cols-2 gap-4 text-sm">
                                 <div class="flex items-center">
                                     <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                     </svg>
-                                    <span class="text-gray-700">${cabin.capacity}</span>
+                                    <span class="text-gray-700 dark:text-gray-200">${cabin.capacity}</span>
                                 </div>
                                 <div class="flex items-center">
                                     <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                                     </svg>
-                                    <span class="text-gray-700">${cabin.size}</span>
+                                    <span class="text-gray-700 dark:text-gray-200">${cabin.size}</span>
                                 </div>
                                 <div class="flex items-center">
                                     <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
-                                    <span class="text-gray-700">${cabin.location}</span>
+                                    <span class="text-gray-700 dark:text-gray-200">${cabin.location}</span>
                                 </div>
                                 <div class="flex items-center">
                                     <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
-                                    <span class="text-gray-700">Verified</span>
+                                    <span class="text-gray-700 dark:text-gray-200">Verified</span>
                                 </div>
                             </div>
                         </div>
                         
-                        <p class="text-gray-600 leading-relaxed text-lg">${cabin.description}</p>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">${cabin.description}</p>
                         
                         <!-- Action Buttons -->
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <button class="bg-linear-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            <button class="bg-linear-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 reserve-btn">
                                 Reserve Now
                             </button>
-                            <button class="border-2 border-green-600 text-green-600 hover:bg-green-50 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300">
+                            <button class="border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 dark:text-emerald-400 dark:hover:bg-emerald-900/20 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 gallery-btn">
                                 View Gallery
                             </button>
                         </div>
@@ -235,18 +236,18 @@ function openCabinModal(cabinId) {
             <!-- Detailed Information Tabs -->
             <div class="space-y-8">
                 <!-- Amenities Section -->
-                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
                     <div class="bg-linear-to-r from-green-600 to-blue-600 p-6">
                         <h3 class="text-2xl font-bold text-white">Amenities & Features</h3>
                     </div>
                     <div class="p-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             ${cabin.amenities.map(amenity => `
-                                <div class="flex items-center p-3 bg-gray-50 rounded-xl">
+                                <div class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-xl">
                                     <svg class="w-5 h-5 text-green-600 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
-                                    <span class="text-gray-700 font-medium">${amenity}</span>
+                                    <span class="text-gray-700 dark:text-gray-200 font-medium">${amenity}</span>
                                 </div>
                             `).join('')}
                         </div>
@@ -254,18 +255,18 @@ function openCabinModal(cabinId) {
                 </div>
                 
                 <!-- Highlights Section -->
-                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
                     <div class="bg-linear-to-r from-blue-600 to-purple-600 p-6">
                         <h3 class="text-2xl font-bold text-white">Highlights</h3>
                     </div>
                     <div class="p-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             ${cabin.highlights.map(highlight => `
-                                <div class="flex items-start p-4 bg-linear-to-r from-blue-50 to-purple-50 rounded-xl border-l-4 border-blue-500">
+                                <div class="flex items-start p-4 bg-linear-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border-l-4 border-blue-500">
                                     <svg class="w-6 h-6 text-blue-600 mr-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
                                     </svg>
-                                    <span class="text-gray-700 font-medium">${highlight}</span>
+                                    <span class="text-gray-700 dark:text-gray-200 font-medium">${highlight}</span>
                                 </div>
                             `).join('')}
                         </div>
@@ -273,18 +274,18 @@ function openCabinModal(cabinId) {
                 </div>
                 
                 <!-- Policies Section -->
-                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+                <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
                     <div class="bg-linear-to-r from-gray-600 to-gray-700 p-6">
                         <h3 class="text-2xl font-bold text-white">Booking Policies</h3>
                     </div>
                     <div class="p-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             ${cabin.policies.map(policy => `
-                                <div class="flex items-center p-3 bg-gray-50 rounded-xl">
-                                    <svg class="w-5 h-5 text-gray-600 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-xl">
+                                    <svg class="w-5 h-5 text-gray-600 dark:text-gray-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
-                                    <span class="text-gray-700 font-medium">${policy}</span>
+                                    <span class="text-gray-700 dark:text-gray-200 font-medium">${policy}</span>
                                 </div>
                             `).join('')}
                         </div>
@@ -294,6 +295,7 @@ function openCabinModal(cabinId) {
         </div>
     `;
 
+    modalContent.innerHTML = content;
     console.log('Modal content set, length:', modalContent.innerHTML.length);
     console.log('Modal content preview:', modalContent.innerHTML.substring(0, 200) + '...');
 
@@ -340,6 +342,83 @@ document.addEventListener('click', (e) => {
             const cabinId = Array.from(card.parentElement.children).indexOf(card) + 1;
             console.log('Cabin ID:', cabinId);
             openCabinModal(cabinId);
+        }
+    }
+    
+    // Reserve button functionality
+    if (e.target.closest('.reserve-btn')) {
+        e.preventDefault();
+        console.log('Reserve button clicked');
+        // Get the cabin name from the modal
+        const cabinName = document.querySelector('#cabin-modal h1')?.textContent;
+        if (cabinName) {
+            alert(`🎉 Thank you for your interest in ${cabinName}!\n\nOur reservation system is coming soon. Please contact us at reservations@scenicforests.com or call (555) 123-4567 to make your reservation.`);
+        } else {
+            alert('🎉 Thank you for your interest!\n\nOur reservation system is coming soon. Please contact us at reservations@scenicforests.com or call (555) 123-4567 to make your reservation.');
+        }
+    }
+    
+    // Gallery button functionality
+    if (e.target.closest('.gallery-btn')) {
+        e.preventDefault();
+        console.log('Gallery button clicked');
+        // Get the cabin name from the modal
+        const cabinName = document.querySelector('#cabin-modal h1')?.textContent;
+        const cabinImage = document.querySelector('#cabin-modal img')?.src;
+        
+        if (cabinName && cabinImage) {
+            // Create a simple gallery modal
+            const galleryModal = document.createElement('div');
+            galleryModal.className = 'fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4';
+            galleryModal.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+                    <div class="relative">
+                        <button class="absolute top-4 right-4 z-20 w-8 h-8 bg-white hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-full flex items-center justify-center text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors shadow-lg close-gallery">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                        <div class="p-8">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">${cabinName} - Photo Gallery</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-4">
+                                    <img src="${cabinImage}" alt="${cabinName}" class="w-full h-64 object-cover rounded-xl shadow-lg">
+                                    <p class="text-gray-600 dark:text-gray-300 text-center">Main cabin view</p>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="bg-emerald-50 dark:bg-emerald-900/20 rounded-xl p-8 text-center">
+                                        <svg class="w-16 h-16 text-emerald-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                        </svg>
+                                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">More Photos Coming Soon</h3>
+                                        <p class="text-gray-600 dark:text-gray-300">We're currently updating our photo gallery. Check back soon for more beautiful images of ${cabinName}!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(galleryModal);
+            
+            // Close gallery functionality
+            const closeGallery = () => {
+                galleryModal.remove();
+            };
+            
+            galleryModal.addEventListener('click', (e) => {
+                if (e.target.closest('.close-gallery') || e.target === galleryModal) {
+                    closeGallery();
+                }
+            });
+            
+            document.addEventListener('keydown', function closeOnEscape(e) {
+                if (e.key === 'Escape') {
+                    closeGallery();
+                    document.removeEventListener('keydown', closeOnEscape);
+                }
+            });
         }
     }
     
