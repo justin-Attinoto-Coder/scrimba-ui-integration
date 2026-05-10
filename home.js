@@ -158,4 +158,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-console.log("Scenic Forests — home page loaded 🚀");
+// Destination card click handlers
+document.querySelectorAll('.destination-card').forEach(card => {
+    card.addEventListener('click', () => {
+        // Navigate to cabins page
+        window.location.href = 'index.html';
+    });
+});
+
+// Contact modal functionality
+const contactBtn = document.getElementById('contact-btn');
+const contactModal = document.getElementById('contact-modal');
+const closeContactModal = document.getElementById('close-contact-modal');
+
+if (contactBtn && contactModal && closeContactModal) {
+    // Open contact modal
+    contactBtn.addEventListener('click', () => {
+        contactModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close contact modal
+    closeContactModal.addEventListener('click', () => {
+        contactModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    });
+
+    // Close on backdrop click
+    contactModal.addEventListener('click', (e) => {
+        if (e.target === contactModal) {
+            contactModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !contactModal.classList.contains('hidden')) {
+            contactModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
