@@ -6,7 +6,6 @@ export default {
     "./design-system.html",
     "./index.js",
     "./home.js",
-    "./index.css",
   ],
   darkMode: 'class',
   theme: {

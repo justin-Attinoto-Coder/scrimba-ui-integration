@@ -1,3 +1,12 @@
+console.log("home.js loaded");
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+console.log("GSAP loaded:", gsap, ScrollTrigger);
+
 // Theme toggle functionality
 const themeToggle = document.getElementById('theme-toggle');
 const sunIcon = document.getElementById('sun-icon');
@@ -67,71 +76,86 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // GSAP animations
 document.addEventListener('DOMContentLoaded', () => {
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+    
     // Hero animations
-    gsap.from('.hero-content h1', {
-        duration: 1.2,
-        y: -50,
-        opacity: 0,
-        ease: "power2.out"
-    });
+    if (document.querySelector('.hero-content h1')) {
+        gsap.from('.hero-content h1', {
+            duration: 1.2,
+            y: -50,
+            opacity: 0,
+            ease: "power2.out"
+        });
+    }
     
-    gsap.from('.hero-content p', {
-        duration: 1,
-        y: 30,
-        opacity: 0,
-        ease: "power2.out",
-        delay: 0.3
-    });
+    if (document.querySelector('.hero-content p')) {
+        gsap.from('.hero-content p', {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            ease: "power2.out",
+            delay: 0.3
+        });
+    }
     
-    gsap.from('.hero-content .flex', {
-        duration: 0.8,
-        y: 30,
-        opacity: 0,
-        ease: "power2.out",
-        delay: 0.6
-    });
+    if (document.querySelector('.hero-content .flex')) {
+        gsap.from('.hero-content .flex', {
+            duration: 0.8,
+            y: 30,
+            opacity: 0,
+            ease: "power2.out",
+            delay: 0.6
+        });
+    }
     
     // Features animation
     const features = document.querySelectorAll('.features-grid > div');
-    gsap.from(features, {
-        duration: 0.8,
-        y: 50,
-        opacity: 0,
-        stagger: 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: '.features-section',
-            start: 'top 80%'
-        }
-    });
+    if (features.length > 0) {
+        gsap.from(features, {
+            duration: 0.8,
+            y: 50,
+            opacity: 0,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: '.features-section',
+                start: 'top 80%'
+            }
+        });
+    }
     
     // Destinations animation
     const destinations = document.querySelectorAll('.destinations-grid > div');
-    gsap.from(destinations, {
-        duration: 0.8,
-        y: 50,
-        opacity: 0,
-        stagger: 0.15,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: '#destinations',
-            start: 'top 80%'
-        }
-    });
+    if (destinations.length > 0) {
+        gsap.from(destinations, {
+            duration: 0.8,
+            y: 50,
+            opacity: 0,
+            stagger: 0.15,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: '#destinations',
+                start: 'top 80%'
+            }
+        });
+    }
     
     // Testimonials animation
     const testimonials = document.querySelectorAll('.testimonials-grid > div');
-    gsap.from(testimonials, {
-        duration: 0.8,
-        y: 50,
-        opacity: 0,
-        stagger: 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: '.testimonials-section',
-            start: 'top 80%'
-        }
-    });
+    if (testimonials.length > 0) {
+        gsap.from(testimonials, {
+            duration: 0.8,
+            y: 50,
+            opacity: 0,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: '.testimonials-section',
+                start: 'top 80%'
+            }
+        });
+    }
 });
 
 console.log("Scenic Forests — home page loaded 🚀");
