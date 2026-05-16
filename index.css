@@ -1,20 +1,16 @@
 @import "tailwindcss";
 
-@source "./index.html";
-@source "./cabins.html";
-@source "./home.html";
-@source "./design-system.html";
-@source "./*.js";
-
 /* Custom CSS - Converted from Tailwind utilities */
 
 /* CSS Custom Properties for theming */
 :root {
   --bg-white: #ffffff;
   --text-gray-900: #111827;
-  --text-gray-800: #1f2937;
+  --text-gray-600: #4b5563;
+  --text-gray-100: #f3f4f6;
   --text-green-700: #047857;
   --text-green-600: #059669;
+  --text-green-400: #34d399;
   --text-green-300: #6ee7b7;
   --border-gray-200: #e5e7eb;
   --border-gray-700: #374151;
@@ -299,7 +295,7 @@ body {
 }
 
 .dark .hero-h1 {
-  color: var(--text-gray-900);
+  color: white;
 }
 
 .light .hero-p {
@@ -307,11 +303,11 @@ body {
 }
 
 .dark .hero-p {
-  color: var(--text-gray-900);
+  color: white;
 }
 
 /* Gradient text */
-.bg-linear-to-r {
+.bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
@@ -325,15 +321,17 @@ body {
 }
 
 .light .hero-gradient-text {
-  --tw-gradient-from: var(--text-green-700);
-  --tw-gradient-to: rgb(6 182 212);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  background-image: linear-gradient(to right, #ffffff, var(--text-green-700)) !important;
+  --tw-gradient-from: #ffffff !important;
+  --tw-gradient-to: var(--text-green-700) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }
 
 .dark .hero-gradient-text {
-  --tw-gradient-from: var(--text-green-300);
-  --tw-gradient-to: rgb(110 231 183);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  background-image: linear-gradient(to right, #ffffff, #34d399) !important;
+  --tw-gradient-from: #ffffff !important;
+  --tw-gradient-to: #34d399 !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }
 
 /* Backdrop and blur */
@@ -408,7 +406,6 @@ body {
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-
 .dark {
     --popover-foreground: 210 40% 98%;
     --primary: 210 40% 98%;
@@ -424,9 +421,8 @@ body {
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-  }
-
-  .light {
+}
+.light {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -446,141 +442,75 @@ body {
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-  }
-
-@layer base {
-  * {
-    @apply border-gray-200;
-  }
-  body {
-    @apply bg-white text-gray-900;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
 }
 
-/* Dark mode component overrides */
 .dark nav {
-  @apply bg-gray-900/95 backdrop-blur-sm;
-}
-
-.theme-toggle {
-  @apply p-2 rounded-lg bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-gray-50 transition-colors duration-200;
-}
-
-.dark .theme-toggle {
-  @apply bg-gray-800/80 backdrop-blur-sm border-gray-600/50 hover:bg-gray-700/80;
-}
-
-.theme-toggle svg {
-  @apply w-5 h-5 text-gray-600;
-}
-
-.dark .theme-toggle svg {
-  @apply text-gray-200;
-}
-
-/* Theme-based navigation styles */
-nav {
-  @apply sticky top-0 z-40 shadow-sm backdrop-blur-sm;
+  background-color: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(4px);
 }
 
 .light nav {
-  @apply bg-white/95;
-}
-
-.dark nav {
-  @apply bg-gray-900/95;
+  background-color: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(4px);
 }
 
 .nav-link {
-  @apply font-medium transition-colors;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .light .nav-link {
-  @apply text-gray-800 hover:text-green-600;
+  color: var(--text-gray-800) !important;
+}
+
+.light .nav-link:hover {
+  color: var(--text-green-600) !important;
 }
 
 .dark .nav-link {
-  @apply text-gray-100 hover:text-green-400;
+  color: var(--text-gray-100) !important;
 }
 
-.light .nav-link.active {
-  @apply text-green-600;
+.dark .nav-link:hover {
+  color: var(--text-green-400) !important;
 }
 
-.dark .nav-link.active {
-  @apply text-green-400;
+.theme-toggle {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-gray-200);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Hero section theme styles */
-.light .hero-h1 {
-  @apply text-gray-900;
+.theme-toggle:hover {
+  background-color: #f9fafb;
 }
 
-.dark .hero-h1 {
-  @apply text-white;
+.dark .theme-toggle {
+  background-color: rgba(55, 65, 81, 0.8);
+  border-color: rgba(75, 85, 99, 0.5);
 }
 
-.light .hero-p {
-  @apply text-gray-700;
+.dark .theme-toggle:hover {
+  background-color: rgba(55, 65, 81, 0.9);
 }
 
-.dark .hero-p {
-  @apply text-green-50;
+.theme-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #f97316;
 }
 
-.light .hero-gradient-text {
-  @apply from-green-700 to-blue-700;
+.light div[class*="bg-white/10"] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
 }
 
-.dark .hero-gradient-text {
-  @apply from-green-400 to-blue-400;
+.light #mobile-menu {
+  background-color: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(4px);
 }
-
-.light .hero-btn-primary {
-  @apply bg-green-600 hover:bg-green-700 text-white;
-}
-
-.dark .hero-btn-primary {
-  @apply bg-gray-800 hover:bg-gray-700 text-green-300;
-}
-
-.light .hero-btn-secondary {
-  @apply border-green-600 text-green-600 hover:bg-green-600 hover:text-white;
-}
-
-.dark .hero-btn-secondary {
-  @apply border-white text-white hover:bg-gray-800 hover:text-green-300;
-}
-
-/* Button styles for both themes */
-.btn-primary-light {
-  @apply bg-linear-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white;
-}
-
-.btn-primary-dark {
-  @apply bg-linear-to-r from-green-400 to-blue-400 hover:from-green-500 hover:to-blue-500 text-white;
-}
-
-.btn-secondary-light {
-  @apply border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white;
-}
-
-.btn-secondary-dark {
-  @apply border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white;
-}
-
-/* Text color utilities for dark mode */
-.text-primary-light { @apply text-green-700; }
-.text-primary-dark { @apply text-green-300; }
-
-.text-secondary-light { @apply text-green-600; }
-.text-secondary-dark { @apply text-green-400; }
-
-.text-accent-light { @apply text-emerald-700; }
-.text-accent-dark { @apply text-emerald-300; }
-
-/* Seasonal gradient overrides for dark mode */
 .light .hero-gradient {
   background: linear-gradient(135deg,
     rgba(255, 255, 255, 0.85) 0%,
