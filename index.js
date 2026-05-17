@@ -51,16 +51,20 @@ if (menuBtn && mobileMenu) {
     });
 }
 
+const cabin1Image = new URL('./images/cabin1.jpg', import.meta.url).href;
+const cabin2Image = new URL('./images/cabin2.jpg', import.meta.url).href;
+const cabin3Image = new URL('./images/cabin3.jpg', import.meta.url).href;
+
 // Cabin data
 const cabins = [
     {
         id: 1,
         name: "Pine Retreat",
-        image: "images/cabin1.jpg",
+        image: cabin1Image,
         description: "A cozy cabin surrounded by towering pines, perfect for intimate getaways with modern amenities and rustic charm.",
         features: ["2 Bedrooms", "1 Bathroom", "Fireplace", "Hot Tub", "WiFi"],
         price: "$250/night",
-        gallery: ["images/cabin1.jpg", "images/cabin2.jpg", "images/cabin3.jpg"],
+        gallery: [cabin1Image, cabin2Image, cabin3Image],
         amenities: ["King Bed", "Full Kitchen", "Gas Fireplace", "Private Hot Tub", "High-Speed WiFi", "Smart TV", "Outdoor Seating"],
         location: "Pine Forest Trail, 0.5 miles from main lodge",
         capacity: "Up to 4 guests",
@@ -71,11 +75,11 @@ const cabins = [
     {
         id: 2,
         name: "Maple Lodge",
-        image: "images/cabin2.jpg",
+        image: cabin2Image,
         description: "Spacious family cabin with panoramic views, featuring a stone fireplace and private hot tub for ultimate relaxation.",
         features: ["3 Bedrooms", "2 Bathrooms", "Stone Fireplace", "Private Hot Tub", "Kitchen"],
         price: "$350/night",
-        gallery: ["images/cabin2.jpg", "images/cabin1.jpg", "images/cabin3.jpg"],
+        gallery: [cabin2Image, cabin1Image, cabin3Image],
         amenities: ["Master Suite with King Bed", "Two Guest Rooms", "Stone Fireplace", "Private Hot Tub", "Fully Equipped Kitchen", "Dining Area", "Living Room with Sofa Bed", "Deck with BBQ"],
         location: "Maple Ridge, 1 mile from hiking trails",
         capacity: "Up to 6 guests",
@@ -86,11 +90,11 @@ const cabins = [
     {
         id: 3,
         name: "Oak Haven",
-        image: "images/cabin3.jpg",
+        image: cabin3Image,
         description: "Luxurious cabin with vaulted ceilings, gourmet kitchen, and direct forest access for nature enthusiasts.",
         features: ["4 Bedrooms", "3 Bathrooms", "Gourmet Kitchen", "Forest Access", "Game Room"],
         price: "$450/night",
-        gallery: ["images/cabin3.jpg", "images/cabin2.jpg", "images/cabin1.jpg"],
+        gallery: [cabin3Image, cabin2Image, cabin1Image],
         amenities: ["Master Suite with California King", "Three Guest Bedrooms", "Gourmet Kitchen with Island", "Game Room with Pool Table", "Home Theater", "Vaulted Ceilings", "Floor-to-Ceiling Windows", "Private Forest Path"],
         location: "Oak Grove Estate, Direct forest access",
         capacity: "Up to 8 guests",
@@ -101,11 +105,11 @@ const cabins = [
     {
         id: 4,
         name: "Cedar Escape",
-        image: "images/cabin2.jpg",
+        image: cabin2Image,
         description: "Intimate cabin with cedar walls, perfect for couples seeking privacy and romance in the woods.",
         features: ["1 Bedroom", "1 Bathroom", "Cedar Interior", "Private Deck", "Fire Pit"],
         price: "$200/night",
-        gallery: ["images/cabin2.jpg", "images/cabin3.jpg", "images/cabin1.jpg"],
+        gallery: [cabin2Image, cabin3Image, cabin1Image],
         amenities: ["Queen Platform Bed", "Cedar-Lined Walls", "Rainfall Shower", "Private Deck", "Outdoor Fire Pit", "Hammock", "Stargazing Platform"],
         location: "Cedar Grove, Secluded location",
         capacity: "Up to 2 guests",
@@ -116,11 +120,11 @@ const cabins = [
     {
         id: 5,
         name: "Birch Retreat",
-        image: "images/cabin3.jpg",
+        image: cabin3Image,
         description: "Modern cabin with birch accents, featuring smart home technology and outdoor fire pit.",
         features: ["2 Bedrooms", "1 Bathroom", "Smart Home", "Outdoor Fire Pit", "Sauna"],
         price: "$300/night",
-        gallery: ["images/cabin3.jpg", "images/cabin1.jpg", "images/cabin2.jpg"],
+        gallery: [cabin3Image, cabin1Image, cabin2Image],
         amenities: ["Smart Home Controls", "Birch Wood Accents", "Infrared Sauna", "Outdoor Fire Pit", "Wireless Charging Stations", "Sound System", "Rain Shower", "Mudroom"],
         location: "Birch Trail, 0.8 miles from amenities",
         capacity: "Up to 4 guests",
@@ -131,11 +135,11 @@ const cabins = [
     {
         id: 6,
         name: "Spruce Sanctuary",
-        image: "images/cabin1.jpg",
+        image: cabin1Image,
         description: "Secluded cabin with spruce forest views, ideal for writers and artists seeking inspiration.",
         features: ["Studio", "1 Bathroom", "Writing Desk", "Forest Views", "Quiet Location"],
         price: "$180/night",
-        gallery: ["images/cabin1.jpg", "images/cabin2.jpg", "images/cabin3.jpg"],
+        gallery: [cabin1Image, cabin2Image, cabin3Image],
         amenities: ["Studio Layout", "Writing Desk with View", "Art Supplies Storage", "Forest View Windows", "Quiet Location", "Reading Nook", "Minimalist Design"],
         location: "Spruce Grove, Most secluded location",
         capacity: "Up to 2 guests",
@@ -190,30 +194,30 @@ function openCabinModal(cabinId) {
                         <div class="bg-linear-to-br from-green-50 to-blue-50 p-6 rounded-2xl border border-green-100">
                             <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">At a Glance</h3>
                             <div class="grid grid-cols-2 gap-4 text-sm">
-                                <div class="flex items-center">
+                                <div class="flex items-center text-gray-700 dark:text-gray-700">
                                     <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                     </svg>
-                                    <span class="text-gray-700 dark:text-gray-200">${cabin.capacity}</span>
+                                    <span class="text-gray-700 dark:text-gray-700">${cabin.capacity}</span>
                                 </div>
-                                <div class="flex items-center">
+                                <div class="flex items-center text-gray-700 dark:text-gray-700">
                                     <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                                     </svg>
-                                    <span class="text-gray-700 dark:text-gray-200">${cabin.size}</span>
+                                    <span class="text-gray-700 dark:text-gray-700">${cabin.size}</span>
                                 </div>
-                                <div class="flex items-center">
+                                <div class="flex items-center text-gray-700 dark:text-gray-700">
                                     <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
-                                    <span class="text-gray-700 dark:text-gray-200">${cabin.location}</span>
+                                    <span class="text-gray-700 dark:text-gray-700">${cabin.location}</span>
                                 </div>
-                                <div class="flex items-center">
+                                <div class="flex items-center text-gray-700 dark:text-gray-700">
                                     <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
-                                    <span class="text-gray-700 dark:text-gray-200">Verified</span>
+                                    <span class="text-gray-700 dark:text-gray-700">Verified</span>
                                 </div>
                             </div>
                         </div>
@@ -304,17 +308,30 @@ function openCabinModal(cabinId) {
     document.body.style.overflow = 'hidden';
     
     // Animate modal entrance
-    gsap.from(modalContent, {
+    const modalPanel = modalContent.firstElementChild;
+
+    if (modalPanel) {
+        gsap.from(modalPanel, {
         duration: 0.5,
         y: 50,
         opacity: 0,
         ease: "power2.out"
-    });
+        });
+    }
 }
 
 function closeCabinModal() {
     console.log('Closing modal');
-    gsap.to(modalContent, {
+    const modalPanel = modalContent.firstElementChild;
+
+    if (!modalPanel) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        modalContent.innerHTML = '';
+        return;
+    }
+
+    gsap.to(modalPanel, {
         duration: 0.3,
         y: 50,
         opacity: 0,
