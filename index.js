@@ -190,9 +190,9 @@ function openCabinModal(cabinId) {
                     </div>
                     
                     <!-- Quick Info -->
-                    <div class="lg:w-1/2 space-y-6">
+                    <div class="lg:w-1/2 space-y-6 text-gray-800 dark:text-gray-200">
                         <div class="bg-linear-to-br from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 p-6 rounded-2xl border border-green-100 dark:border-green-800">
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">At a Glance</h3>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">At a Glance</h3>
                             <div class="grid grid-cols-2 gap-4 text-sm">
                                 <div class="flex items-center text-gray-700 dark:text-gray-300">
                                     <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
